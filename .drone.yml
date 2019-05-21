@@ -1,0 +1,18 @@
+---
+kind: pipeline
+name: default
+
+steps:
+
+  - name:  fetch-schemas
+    image: alpine/git:1.0.7
+    commands:
+      - git submodule update --init --checkout
+      - test -f lib/schemas/README.md
+
+  - name:  generate-ruby
+    image: library/node:12.2-alpine
+    commands:
+      - npm install -g quicktype@15.0.194
+      - quicktype lib/schemas/ src/azure-schema/schema.rb
+
