@@ -7,7 +7,7 @@ steps:
   - name:  fetch-schemas
     image: alpine/git:1.0.7
     commands:
-      - git submodule update --init --checkout
+      - git submodule update --init
       - test -f lib/schemas/README.md
 
   - name:  generate-ruby

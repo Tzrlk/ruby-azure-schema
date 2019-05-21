@@ -1,4 +1,4 @@
 [submodule "azure-resource-manager-schemas"]
-	url    = https://github.com/Azure/azure-resource-manager-schemas.git
-	path   = lib/schemas
+	url = https://github.com/Azure/azure-resource-manager-schemas.git
+	path = lib/schemas
 	branch = master
