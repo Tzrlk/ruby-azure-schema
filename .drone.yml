@@ -14,5 +14,8 @@ steps:
     image: library/node:12.2-alpine
     commands:
       - npm install -g quicktype@15.0.194
-      - quicktype lib/schemas/ src/azure-schema/schema.rb
+      - mkdir -p src/azure-schema
+      - quicktype \
+          --src lib/schemas/ \
+          --out src/azure-schema/schema.rb
 
